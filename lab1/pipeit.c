@@ -1,6 +1,7 @@
 /* CSC 453 Lab 01
  * Due Friday 9/28/18
  * Daniel Kirkpatrick (djkirkpa)
+ * Patrick Farrell (pifarrel)
  */
 
 /* STILL NOT GETTING OUTFILE:PERMISSION DENIED EXIT STATUS TO BE 1 */
