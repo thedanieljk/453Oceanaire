@@ -63,7 +63,7 @@ int main(int argc, char * argv[]) {
             exit(1);
          }
          /* open and check outfile */
-         int outfile = open("outfile",O_RDWR | O_CREAT,0777);
+         int outfile = open("outfile",O_RDWR | O_CREAT | O_TRUNC , 0777);
          if (outfile < 0) {
             perror("outfile");
             exit(EXIT_FAILURE);
