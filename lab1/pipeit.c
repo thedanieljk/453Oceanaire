@@ -1,5 +1,6 @@
 /* CSC 453 Lab 01
  * Due Friday 9/28/18
+ * Daniel Kirkpatrick (djkirkpa)
  */
 
 /* STILL NOT GETTING OUTFILE:PERMISSION DENIED EXIT STATUS TO BE 1 */
@@ -32,7 +33,7 @@ int main(int argc, char * argv[]) {
    }
 
    pid_child1 = fork();
-   checkFork(pid_child1); /* Call helper function to check if forked correctly */
+   checkFork(pid_child1); 
 
    if (pid_child1 == 0) { /* In child 1 (ls?) */
       if (dup2(fd1[1],STDOUT_FILENO) < 0) {
