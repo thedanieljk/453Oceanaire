@@ -65,7 +65,7 @@ int main(int argc, char * argv[]) {
          int outfile = open("outfile",O_RDWR | O_CREAT,0777);
          if (outfile < 0) {
             perror("outfile");
-            exit(-1);
+            _exit(1);
          }
          if (dup2(outfile,STDOUT_FILENO) < 0) {/* Write from STDOUT */
             perror("error");
@@ -77,12 +77,13 @@ int main(int argc, char * argv[]) {
          exit(1);
       }
       else { /* Back in parent */
-         pid_t child2Exit;
+         //pid_t child2Exit;
+         int status;
          close(fd1[0]);
          close(fd1[1]);
-         child2Exit = waitpid(pid_child2); /*wait for second child*/
-         if (child2Exit == -1) {
-            perror("child2 exit error");
+         //waitpid(pid_child2,&status); /*wait for second child*/
+         if (waitpid(pid_child2,&status,0) == -1) {
+            perror("child2 exit error status");
             exit(1);
          }
 
